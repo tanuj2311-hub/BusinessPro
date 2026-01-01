@@ -294,3 +294,13 @@ function initDarkMode() {
 // initDarkMode();
 
 console.log('Portfolio website loaded successfully!');
+
+function toggleSection() {
+    const section = document.getElementById("extraSection");
+
+    if (section.style.display === "none") {
+        section.style.display = "block";
+    } else {
+        section.style.display = "none";
+    }
+}
