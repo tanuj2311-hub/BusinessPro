@@ -1,15 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional Business Portfolio - Showcasing innovative solutions and services">
-    <title>Business Portfolio | Professional Services</title>
+    <title>BusinessPro - Professional Solutions</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
 
+    <!-- QUESTION 8: Internal CSS for Christmas/New Year Special Offers Section -->
+    <style>
+        .special-offers {
+            background: linear-gradient(135deg, #c31432 0%, #240b36 100%);
+            color: white;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .special-offers::before {
+            content: '❄';
+            position: absolute;
+            font-size: 100px;
+            opacity: 0.1;
+            animation: snowfall 10s infinite;
+        }
+
+        @keyframes snowfall {
+            0% { top: -100px; left: 10%; }
+            100% { top: 100%; left: 90%; }
+        }
+
+        .offers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .offer-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .offer-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .offer-badge {
+            background: #f59e0b;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            display: inline-block;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .offer-price {
+            font-size: 36px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .offer-price .old-price {
+            text-decoration: line-through;
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-right: 10px;
+        }
+    </style>
+</head>
 <body>
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
@@ -18,46 +83,47 @@
                 <div class="logo">
                     <h2>Business<span>Pro</span></h2>
                 </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#products" class="nav-link">Products</a></li>
+                    <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                    <li><a href="#special-offers" class="nav-link">Special Offers</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
                 <div class="hamburger" id="hamburger">
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
-                <ul class="nav-menu" id="navMenu">
-                    <li><a href="#home" class="nav-link active">Home</a></li>
-                    <li><a href="#about" class="nav-link">About</a></li>
-                    <li><a href="#services" class="nav-link">Services</a></li>
-                    <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
-                    <li><a href="#team" class="nav-link">Team</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
-                </ul>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
+    <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1 class="typing-text">Transforming Ideas Into <span>Reality</span></h1>
-                    <p>We deliver innovative business solutions that drive growth and success. Partner with us to elevate your business to new heights.</p>
+                    <h1>We deliver <span class="typing-text">innovative business solutions</span></h1>
+                    <p>Partner with us to elevate your business to new heights through cutting-edge technology and strategic excellence.</p>
                     <div class="hero-buttons">
-                        <a href="#contact" class="btn btn-primary">Get Started</a>
-                        <a href="#portfolio" class="btn btn-secondary">View Work</a>
+                        <button class="btn btn-primary">Get Started</button>
+                        <button class="btn btn-secondary">Learn More</button>
                     </div>
                 </div>
                 <div class="hero-image">
                     <div class="floating-card card-1">
                         <i class="fas fa-chart-line"></i>
-                        <h4>98% Success Rate</h4>
+                        <h4>500+ Projects</h4>
                     </div>
                     <div class="floating-card card-2">
                         <i class="fas fa-users"></i>
-                        <h4>500+ Clients</h4>
+                        <h4>200+ Clients</h4>
                     </div>
                     <div class="floating-card card-3">
-                        <i class="fas fa-trophy"></i>
+                        <i class="fas fa-award"></i>
                         <h4>50+ Awards</h4>
                     </div>
                 </div>
@@ -65,14 +131,138 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
+    <!-- QUESTION 1: Products Section with Cost Calculation -->
+    <section class="services" id="products" style="background: #f0f9ff;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Products</h2>
+                <p>Select products and see the total cost with automatic discount</p>
+            </div>
+            <div class="services-grid">
+                <!-- Product 1 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Website Builder Pro</h3>
+                    <p>Professional website building tool with drag-and-drop interface.</p>
+                    <p class="product-price">₹599</p>
+                    <label>
+                        <input type="checkbox" class="product-checkbox" data-price="599" data-name="Website Builder Pro">
+                        Add to Cart
+                    </label>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile App Suite</h3>
+                    <p>Complete mobile application development framework.</p>
+                    <p class="product-price">₹899</p>
+                    <label>
+                        <input type="checkbox" class="product-checkbox" data-price="899" data-name="Mobile App Suite">
+                        Add to Cart
+                    </label>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Security Package</h3>
+                    <p>Advanced cybersecurity solution for your business.</p>
+                    <p class="product-price">₹449</p>
+                    <label>
+                        <input type="checkbox" class="product-checkbox" data-price="449" data-name="Security Package">
+                        Add to Cart
+                    </label>
+                </div>
+
+                <!-- QUESTION 1: NEW PRODUCT ADDED -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Cloud Storage Premium</h3>
+                    <p>Unlimited cloud storage with advanced backup features and 24/7 support.</p>
+                    <p class="product-price">₹299</p>
+                    <label>
+                        <input type="checkbox" class="product-checkbox" data-price="299" data-name="Cloud Storage Premium">
+                        Add to Cart
+                    </label>
+                </div>
+            </div>
+
+            <!-- Cost Calculation Display (Question 1 & 6) -->
+            <div class="cost-calculation" style="margin-top: 40px; padding: 30px; background: white; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                <h3>Shopping Cart Summary</h3>
+                <div id="cartItems" style="margin: 20px 0;"></div>
+                <p style="font-size: 18px; margin: 10px 0;"><strong>Subtotal:</strong> ₹<span id="subtotal">0</span></p>
+                <p style="font-size: 18px; margin: 10px 0; color: #16a34a;"><strong>Discount:</strong> ₹<span id="discount">0</span> <span id="discountInfo" style="font-size: 14px;"></span></p>
+                <p style="font-size: 24px; margin: 10px 0; color: #2563eb;"><strong>Total:</strong> ₹<span id="totalCost">0</span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUESTION 8: Christmas/New Year Special Offers Section -->
+    <section class="special-offers" id="special-offers">
+        <div class="container">
+            <div class="section-header">
+                <h2 style="color: white;">🎄 Christmas/New Year Special Offers 🎆</h2>
+                <p style="color: rgba(255,255,255,0.9);">Limited time offers - Grab them before they're gone!</p>
+            </div>
+            <div class="offers-grid">
+                <div class="offer-card">
+                    <span class="offer-badge">CHRISTMAS SPECIAL</span>
+                    <h3>🎁 Festive Bundle</h3>
+                    <div class="offer-price">
+                        <span class="old-price">₹2499</span>
+                        <span>₹1499</span>
+                    </div>
+                    <p>Get Website Builder + Mobile Suite at 40% OFF</p>
+                    <button class="btn btn-primary" style="margin-top: 20px;">Grab Now</button>
+                </div>
+
+                <div class="offer-card">
+                    <span class="offer-badge">NEW YEAR DEAL</span>
+                    <h3>🎆 Ultimate Package</h3>
+                    <div class="offer-price">
+                        <span class="old-price">₹3999</span>
+                        <span>₹2199</span>
+                    </div>
+                    <p>All Products + 1 Year Support at 45% OFF</p>
+                    <button class="btn btn-primary" style="margin-top: 20px;">Grab Now</button>
+                </div>
+
+                <div class="offer-card">
+                    <span class="offer-badge">HOLIDAY SPECIAL</span>
+                    <h3>❄️ Winter Sale</h3>
+                    <div class="offer-price">
+                        <span class="old-price">₹1299</span>
+                        <span>₹799</span>
+                    </div>
+                    <p>Cloud Storage Premium + Security Package</p>
+                    <button class="btn btn-primary" style="margin-top: 20px;">Grab Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUESTION 5: Section that can be hidden/shown -->
+    <section class="about" id="about">
         <div class="container">
             <div class="section-header">
                 <h2>About Us</h2>
                 <p>Building excellence through innovation and dedication</p>
+                <!-- QUESTION 5: Button to hide/show section -->
+                <button id="toggleAboutBtn" class="btn btn-primary" style="margin-top: 20px;">
+                    <i class="fas fa-eye-slash"></i> Toggle About Section
+                </button>
             </div>
-            <div class="about-content">
+            <div class="about-content" id="aboutContent">
                 <div class="about-image">
                     <div class="experience-badge">
                         <h3>15+</h3>
@@ -80,10 +270,8 @@
                     </div>
                 </div>
                 <div class="about-text">
-                    <h3>Leading Business Solutions Provider</h3>
-                    <p>We are a dynamic team of professionals dedicated to delivering exceptional business solutions. With over 15 years of experience, we've helped hundreds of companies achieve their goals through innovative strategies and cutting-edge
-                        technology.
-                    </p>
+                    <h3>We are a dynamic team of professionals</h3>
+                    <p>With over 15 years of experience, we've helped hundreds of companies achieve their goals through innovative strategies and cutting-edge technology.</p>
                     <div class="stats-grid">
                         <div class="stat-item">
                             <h4>500+</h4>
@@ -102,25 +290,13 @@
                             <p>Support Available</p>
                         </div>
                     </div>
-                    <a href="#contact" class="btn btn-primary">Learn More</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section style="text-align:center; margin:40px;">
-    <button onclick="toggleSection()" class="btn btn-primary">
-        Show / Hide Extra Section
-    </button>
-
-    <div id="extraSection" style="margin-top:20px;">
-        <h3>Additional Information</h3>
-        <p>This section can be shown or hidden using JavaScript.</p>
-    </div>
-</section>
-
     <!-- Services Section -->
-    <section id="services" class="services">
+    <section class="services" id="services">
         <div class="container">
             <div class="section-header">
                 <h2>Our Services</h2>
@@ -132,209 +308,37 @@
                         <i class="fas fa-laptop-code"></i>
                     </div>
                     <h3>Web Development</h3>
-                    <p>Custom websites and web applications built with modern technologies for optimal performance and user experience.</p>
+                    <p>Custom websites and web applications built with modern technologies for optimal performance.</p>
                     <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
+
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-mobile-alt"></i>
                     </div>
-                    <h3>Mobile Apps</h3>
-                    <p>Native and cross-platform mobile applications designed to engage users and drive business growth.</p>
+                    <h3>Mobile Development</h3>
+                    <p>Native and cross-platform mobile applications designed to engage users and drive growth.</p>
                     <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
+
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-chart-bar"></i>
+                        <i class="fas fa-chart-line"></i>
                     </div>
                     <h3>Digital Marketing</h3>
-                    <p>Strategic marketing campaigns that boost your online presence and connect you with your target audience.</p>
-                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-paint-brush"></i>
-                    </div>
-                    <h3>UI/UX Design</h3>
-                    <p>Beautiful, intuitive interfaces that provide exceptional user experiences and strengthen brand identity.</p>
-                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Cybersecurity</h3>
-                    <p>Comprehensive security solutions to protect your business from digital threats and data breaches.</p>
-                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-cloud"></i>
-                    </div>
-                    <h3>Cloud Solutions</h3>
-                    <p>Scalable cloud infrastructure and migration services for improved efficiency and reduced costs.</p>
+                    <p>Strategic marketing campaigns that boost your online presence and target audience.</p>
                     <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio">
+    <!-- Contact Section with Feedback Form -->
+    <section class="contact" id="contact">
         <div class="container">
             <div class="section-header">
-                <h2>Our Portfolio</h2>
-                <p>Showcasing our best work and successful projects</p>
-            </div>
-            <div class="portfolio-filters">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="web">Web Design</button>
-                <button class="filter-btn" data-filter="app">Mobile Apps</button>
-                <button class="filter-btn" data-filter="branding">Branding</button>
-            </div>
-            <div class="portfolio-grid">
-                <div class="portfolio-item" data-category="web">
-                    <div class="portfolio-image">
-                        <img class="portfolio-image" src="E-com.png" alt="E-Commerce Platform">
-                        <div class="portfolio-overlay">
-                            <h3>E-Commerce Platform</h3>
-                            <p>Web Design</p>
-                            <a href="#" class="portfolio-link"><i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-category="app">
-                    <div class="portfolio-image">
-                        <img class="portfolio-image" src="FitnessT.jpg" alt="Fitness tracking app">
-                        <div class="portfolio-overlay">
-                            <h3>Fitness Tracking App</h3>
-                            <p>Mobile App</p>
-                            <a href="#" class="portfolio-link"><i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-category="branding">
-                    <div class="portfolio-image">
-                        <img class="portfolio-image" src="Corporate.jpg" alt="Corporate identity">
-                        <div class="portfolio-overlay">
-                            <h3>Corporate Identity</h3>
-                            <p>Branding</p>
-                            <a href="#" class="portfolio-link"><i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-category="web">
-                    <div class="portfolio-image">
-                        <img class="portfolio-image" src="restro.jpeg" alt="Restaurant website">
-                        <div class="portfolio-overlay">
-                            <h3>Restaurant Website</h3>
-                            <p>Web Design</p>
-                            <a href="#" class="portfolio-link"><i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-category="app">
-                    <div class="portfolio-image">
-                        <img class="portfolio-image" src="banking.png" alt="banking app">
-                        <div class="portfolio-overlay">
-                            <h3>Banking App</h3>
-                            <p>Mobile App</p>
-                            <a href="#" class="portfolio-link"><i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-category="branding">
-                    <div class="portfolio-image">
-                        <img class="portfolio-image" src="Branding.jpg" alt="Startup branding">
-                        <div class="portfolio-overlay">
-                            <h3>Startup Branding</h3>
-                            <p>Branding</p>
-                            <a href="#" class="portfolio-link"><i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Team Section -->
-    <section id="team" class="team">
-        <div class="container">
-            <div class="section-header">
-                <h2>Our Team</h2>
-                <p>Meet the experts behind our success</p>
-            </div>
-            <div class="team-grid">
-                <div class="team-card">
-                    <div class="team-image">
-                        <div class="team-overlay">
-                            <div class="social-links">
-                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fab fa-github"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="team-info">
-                        <h3>John Anderson</h3>
-                        <p>CEO & Founder</p>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <div class="team-image">
-                        <div class="team-overlay">
-                            <div class="social-links">
-                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fab fa-dribbble"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="team-info">
-                        <h3>Sarah Mitchell</h3>
-                        <p>Creative Director</p>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <div class="team-image">
-                        <div class="team-overlay">
-                            <div class="social-links">
-                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fab fa-github"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="team-info">
-                        <h3>Michael Chen</h3>
-                        <p>Lead Developer</p>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <div class="team-image">
-                        <div class="team-overlay">
-                            <div class="social-links">
-                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fab fa-behance"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="team-info">
-                        <h3>Emily Davis</h3>
-                        <p>Marketing Manager</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2>Get In Touch</h2>
-                <p>Let's discuss your next project</p>
+                <h2>Contact & Feedback</h2>
+                <p>Let's discuss your next project or share your feedback</p>
             </div>
             <div class="contact-content">
                 <div class="contact-info">
@@ -347,6 +351,7 @@
                             <p>123 Business Street, Tech City, TC 12345</p>
                         </div>
                     </div>
+
                     <div class="info-item">
                         <div class="info-icon">
                             <i class="fas fa-phone"></i>
@@ -356,6 +361,7 @@
                             <p>+1 (555) 123-4567</p>
                         </div>
                     </div>
+
                     <div class="info-item">
                         <div class="info-icon">
                             <i class="fas fa-envelope"></i>
@@ -365,32 +371,49 @@
                             <p>contact@businesspro.com</p>
                         </div>
                     </div>
-                    <div class="info-item">
-                        <div class="info-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <div class="info-text">
-                            <h4>Working Hours</h4>
-                            <p>Mon - Fri: 9:00 AM - 6:00 PM</p>
-                        </div>
-                    </div>
                 </div>
+
+                <!-- QUESTION 3, 4, 7: Feedback Form with Validation -->
                 <div class="contact-form-wrapper">
-                    <form class="contact-form" id="contactForm">
+                    <form id="contactForm" class="contact-form">
                         <div class="form-group">
                             <input type="text" id="name" placeholder="Your Name" required>
                         </div>
+
+                        <!-- QUESTION 3: Email validation field -->
                         <div class="form-group">
                             <input type="email" id="email" placeholder="Your Email" required>
+                            <span id="emailError" class="error-message"></span>
                         </div>
+
+                        <!-- QUESTION 3: Mobile number validation field -->
+                        <div class="form-group">
+                            <input type="tel" id="mobile" placeholder="Mobile Number (10 digits)" required>
+                            <span id="mobileError" class="error-message"></span>
+                        </div>
+
                         <div class="form-group">
                             <input type="text" id="subject" placeholder="Subject" required>
                         </div>
+
                         <div class="form-group">
                             <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
                         </div>
+
                         <button type="submit" class="btn btn-primary">Send Message</button>
+
+                        <!-- QUESTION 4: Clear Form Button -->
+                        <button type="button" id="clearFormBtn" class="btn btn-secondary" style="margin-top: 10px; width: 100%;">
+                            <i class="fas fa-trash"></i> Clear Form
+                        </button>
                     </form>
+
+                    <!-- QUESTION 7: Success message display -->
+                    <div id="formSuccessMessage" style="display: none; margin-top: 20px; padding: 20px; background: #d1fae5; color: #065f46; border-radius: 12px; text-align: center;">
+                        <i class="fas fa-check-circle" style="font-size: 48px; margin-bottom: 10px;"></i>
+                        <h3>Success!</h3>
+                        <p>Your feedback has been successfully saved.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -402,7 +425,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Business<span>Pro</span></h3>
-                    <p>Transforming ideas into reality with innovative business solutions.</p>
+                    <p>Delivering innovative solutions that drive business growth and success.</p>
                     <div class="social-icons">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -410,35 +433,29 @@
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
+
                 <div class="footer-section">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
                         <li><a href="#services">Services</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
-                <div class="footer-section">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="#">Web Development</a></li>
-                        <li><a href="#">Mobile Apps</a></li>
-                        <li><a href="#">Digital Marketing</a></li>
-                        <li><a href="#">UI/UX Design</a></li>
-                    </ul>
-                </div>
+
                 <div class="footer-section">
                     <h4>Newsletter</h4>
-                    <p>Subscribe to get latest updates</p>
+                    <p>Subscribe to our newsletter for updates</p>
                     <form class="newsletter-form">
-                        <input type="email" placeholder="Your email">
-                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        <input type="email" placeholder="Your Email">
+                        <button type="submit">Subscribe</button>
                     </form>
                 </div>
             </div>
+
             <div class="footer-bottom">
-                <p>&copy; 2025 BusinessPro. All rights reserved. | Designed by Tanuj Agarwal</p>
+                <p>&copy; 2026 BusinessPro. All rights reserved. Made with <i class="fas fa-heart"></i></p>
             </div>
         </div>
     </footer>
@@ -450,5 +467,4 @@
 
     <script src="script.js"></script>
 </body>
-
 </html>
