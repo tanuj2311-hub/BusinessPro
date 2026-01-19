@@ -477,6 +477,27 @@ img {
 .service-link:hover {
     gap: 15px;
 }
+.service-link,
+.offer-link {
+    position: relative;
+}
+
+.service-link::after,
+.offer-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.service-link:hover::after,
+.offer-link:hover::after {
+    width: 100%;
+}
 
 /* ========================================
    Contact Section
