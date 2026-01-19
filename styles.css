@@ -477,6 +477,24 @@ img {
 .service-link:hover {
     gap: 15px;
 }
+/* ========================================
+   Offer Cards Hover Line Like Services
+   ======================================== */
+.offer-card {
+    background: var(--white);
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border-top: 4px solid transparent; /* thin top line like Services */
+}
+
+.offer-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+    border-top-color: var(--primary-color); /* purple line on hover */
+}
+
 .service-link,
 .offer-link {
     position: relative;
