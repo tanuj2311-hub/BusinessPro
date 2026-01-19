@@ -492,7 +492,7 @@ img {
 .offer-card:hover {
     transform: translateY(-10px);
     box-shadow: var(--shadow-lg);
-    border-top-color: var(--primary-color); /* purple line on hover */
+    border-top-color: var(--purple); /* purple line on hover */
 }
 
 .service-link,
