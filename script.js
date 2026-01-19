@@ -365,3 +365,15 @@ console.log('✓ Q5: Hide/show section toggle button');
 console.log('✓ Q6: 10% discount logic for totals > ₹1000');
 console.log('✓ Q7: Form data saved to backend (localStorage) with success message');
 console.log('✓ Q8: Christmas/New Year Special Offers section added');
+
+const navLinks = document.querySelectorAll('.navbar-nav a');
+
+navLinks.forEach(link => {
+  link.addEventListener('click', function () {
+    // remove active class from all links
+    navLinks.forEach(l => l.classList.remove('active'));
+
+    // add active class to clicked link
+    this.classList.add('active');
+  });
+});
